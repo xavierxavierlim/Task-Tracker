@@ -76,6 +76,11 @@ A simple form to add new tasks with optional description and due date.
 ## tasks.html
 Shows both completed and incomplete tasks. Each task includes a button to complete or delete it.
 
+# Static
+
+## styles.css
+Contains CSS code for styling the web page.
+
 # Design Decisions
 
 ## Authentication
