@@ -11,7 +11,7 @@ User Registration and Login: Secure user authentication using password hashing w
 ## Task Creation
 Users can add tasks with optional descriptions and due dates.
 
-Task Completion
+## Task Completion
 ## Tasks can be marked as complete using a “✓ Complete” button, which updates the database and task counters.
 
 ## Task Deletion
