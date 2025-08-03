@@ -100,6 +100,7 @@ Building this task tracker has been a fulfilling way to consolidate the concepts
 
 # References
 ChatGPT: https://chatgpt.com/
+
 ChatGPT was used to assist in the development of the Task Tracker website.
 
 
