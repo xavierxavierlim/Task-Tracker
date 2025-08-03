@@ -1,6 +1,4 @@
-Task Tracker Web App
-
-# Overview
+# Overview - Task Tracker
 Task Tracker is a web-based productivity application built using Flask, SQLite, HTML, CSS, and Bootstrap. The goal of this project is to provide users with a simple and intuitive tool to create, manage, and complete daily tasks while tracking their progress. It includes user authentication, task creation, completion, and deletion features. Users can view incomplete and completed tasks separately, and the app displays a real-time summary of task completion statistics.
 
 This project was built as part of the CS50 course’s final project to apply all the skills I’ve learned throughout the term, including templating with Jinja2, routing with Flask, managing user sessions, working with SQL databases, and implementing authentication and logic securely and cleanly.
