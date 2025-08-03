@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<div class="homepage-hero text-center">
+    <h1 class="display-3 fw-bold text-primary mb-3">Welcome to Task Tracker</h1>
+    <p class="lead text-dark mb-4">
+        Organize your life, one task at a time.
+    </p>
+    <p class="text-secondary mb-4">
+        Track your daily goals, build habits, and boost your productivity — all in one place.
+    </p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="/register" class="btn btn-primary btn-lg px-4">Get Started</a>
+        <a href="/login" class="btn btn-outline-secondary btn-lg px-4">Log In</a>
+    </div>
+</div>
+
+<section class="features mt-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm feature-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-success">✅ Create Tasks</h5>
+                    <p class="card-text">Add tasks for your day or week, so nothing slips through the cracks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm feature-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">📈 Track Progress</h5>
+                    <p class="card-text">Mark tasks as complete and view how many tasks completed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm feature-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">📅 Stay Organized</h5>
+                    <p class="card-text">See your task history and stay on top of what matters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

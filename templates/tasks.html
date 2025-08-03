@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}All Tasks{% endblock %}
+
+{% block main %}
+<p class="text-success mb-3">
+    ✅ Completed {{ completed_count }} out of {{ total_count }} task{{ 's' if total_count != 1 else '' }}.
+</p>
+
+<h2 class="text-primary mb-4">📌 Outstanding Tasks</h2>
+
+{% if incomplete_tasks %}
+<div class="table-responsive mb-5">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in incomplete_tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description or '—' }}</td>
+                <td>{{ task.due_date or 'N/A' }}</td>
+                <td><span class="badge bg-warning text-dark">Incomplete</span></td>
+                <td class="d-flex gap-2">
+                    <form action="/complete/{{ task.id }}" method="post">
+                        <input type="hidden" name="next" value="/tasks">
+                        <button type="submit" class="btn btn-sm btn-outline-success">✓ Complete</button>
+                    </form>
+                    <form action="/delete/{{ task.id }}" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+    <div class="alert alert-info text-center mb-5">🎉 You have no outstanding tasks!</div>
+{% endif %}
+
+<hr>
+
+<h2 class="text-success mt-5 mb-4">✅ Completed Tasks</h2>
+
+{% if completed_tasks %}
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in completed_tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description or '—' }}</td>
+                <td>{{ task.due_date or 'N/A' }}</td>
+                <td><span class="badge bg-success">Complete</span></td>
+                <td>
+                    <form action="/delete/{{ task.id }}" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+    <div class="alert alert-info text-center">📭 You haven't completed any tasks yet.</div>
+{% endif %}
+{% endblock %}

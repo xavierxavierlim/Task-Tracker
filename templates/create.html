@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block main %}
+<div class="form-wrapper mx-auto mt-5">
+    <h2 class="text-center text-success mb-4">🆕 New Task</h2>
+    <form action="/create" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+            <input class="form-control" name="title" placeholder="e.g. Finish CS50 project" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="3" placeholder="Optional notes or details..."></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="due_date" class="form-label">Due Date</label>
+            <input class="form-control" type="date" name="due_date" id="due_date">
+        </div>
+
+        <script>
+            // Prevent selecting past dates
+            const dateInput = document.getElementById("due_date");
+            const today = new Date().toISOString().split("T")[0];
+            dateInput.min = today;
+        </script>
+
+        <button class="btn btn-success w-100" type="submit">Create Task</button>
+    </form>
+</div>
+{% endblock %}
